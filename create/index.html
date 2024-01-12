@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/warn.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/create.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/shell/shell.min.js"></script>
+    <script src="../script/create.js" defer></script>
+    <title>Create Shell</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-1">
+                <div class="nav-logo">
+                    <img src="../img/warn.png" alt="">
+                    <span>ShellCraft</span>
+                </div>
+                <div class="line"></div>
+                <div class="nav-info">
+                    Create Shell
+                </div>
+            </div>
+            <div class="nav-middle">
+                <span><a href="../index.html">Home</a></span>
+                <span>Create</span>
+                <span><a href="../index.html">Popular</a></span>
+                <i class="ri-menu-3-fill"></i>
+            </div>
+        </div>
+        <div class="main-editor">
+            <div class="terminal">
+                <div class="header">
+                    <div class="button red"></div>
+                    <div class="button yellow"></div>
+                    <div class="button green"></div>
+                    <div class="title">Bash</div>
+                    <i class="ri-clipboard-line clipboard-icon" onclick="copyCommand1();"></i>
+                    <i class="ri-check-line check-icon"></i>
+                </div>
+                <textarea id="editor">
+
+                </textarea>
+            </div>
+        </div>
+        <div class="select-container">
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="heading">
+                        <span>IP Address</span>
+                    </div>
+                    <input type="text" name="" id="ip" value="10.10.24.123">
+                </div>
+                <div class="card card-2">
+                    <div class="heading">
+                        <span>Port</span>
+                    </div>
+                    <input type="text" name="" id="port" value="6996">
+                </div>
+                <div class="card card-3">
+                    <div class="heading">
+                        <span>Shell Type</span>
+                    </div>
+                    <div class="choose">
+                        <span>Bash</span>
+                    </div>
+                    <div class="shell-type">
+                        <div class="submenu-container" id="subMenu-1">
+                            <div class="submenu-option">
+                                <span>Bash</span>
+                            </div>
+                            <div class="submenu-option">
+                                <span>Netcat</span>
+                            </div>
+                            <div class="submenu-option temp-4">
+                                <span>Python</span>
+                            </div>
+                            <div class="submenu-option">
+                                <span>PHP</span>
+                            </div>
+                            <div class="submenu-option">
+                                <span>Java</span>
+                            </div>
+                            <div class="submenu-option">
+                                <span>Ruby</span>
+                            </div>
+                            <div class="submenu-option">
+                                <span>xterm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="groupType" id="shelltype" value="Bash">
+                </div>
+                <div class="card card-4">
+                    <button id="btn" onclick="copyCommand()">Copy</button>
+                </div>
+            </div>
+            <div class="displayerror">
+                <div class="error-box">
+                    <div class="header">
+                        <div class="button red"></div>
+                        <div class="button yellow"></div>
+                        <div class="button green"></div>
+                        <div class="title">Disappointed</div>
+                    </div>
+                    <img src="../img/warn.png" alt="">
+                    <span>Real hackers don't hack to destroy, they hack to secure...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

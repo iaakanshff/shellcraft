@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inconsolata&family=Lato:wght@300;400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'Monaco';
+    src: url('../fonts/Monaco.ttf') format('truetype');
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+body {
+    background-color: #292932;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.container .nav {
+    width: 100vw;
+    height: 80px;
+    padding: 6vh 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #292932;
+}
+
+
+.nav .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+}
+
+
+.nav-logo img {
+    width: 2.9vw;
+}
+
+.nav .nav-logo span {
+    font-weight: 600;
+    font-size: 1.7vw;
+}
+
+.nav-middle {
+    display: flex;
+    gap: 4vw;
+}
+
+.nav-middle a {
+    text-decoration: none;
+}
+
+.nav-middle span {
+    font-size: 1.39vw;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-middle i {
+    font-size: 1.7vw;
+    visibility: hidden;
+    display: none;
+}
+
+.nav-middle span:nth-of-type(1):before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    height: 3px;
+    width: 100%;
+    background-color: #fd0000;
+    transform: scaleX(1);
+}
+
+
+.main-content {
+    width: 100vw;
+    height: 74vh;
+    padding: 0 8vw;
+    gap: 3vw;
+    display: flex;
+    opacity: 100%;
+    align-items: center;
+    background-color: #292932;
+    position: relative;
+}
+
+.main-content .card-1 {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .card-1 .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.4vw;
+    font-weight: 300;
+    line-height: 8vh;
+    margin-bottom: 3vh;
+}
+
+.main-content .card-2 {
+    width: 50%;
+    height: 100%;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content .card-2 .main-editor {
+    width: 90%;
+    height: 70%;
+    margin-top: 3vh;
+}
+.main-editor .terminal {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #232328;
+    /* box-shadow: rgba(0, 0, 0, 0.11) 0px 2px 4px 0px, rgba(0, 0, 0, 0.22) 0px 2px 33px 0px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    /* background-color: rgb(31, 31, 31, 0.98); */
+}
+
+.main-editor .header {
+    background-color: transparent;
+    padding: 2vh 1vw;
+    display: flex;
+    border-radius: 8px 8px 0px 0px;
+    align-items: center;
+}
+
+
+.main-editor .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff5f56;
+    margin-right: 6px;
+}
+
+.main-editor .button.yellow {
+    background-color: #ffbd2e;
+}
+
+.main-editor .button.green {
+    background-color: #27c93f;
+}
+
+.main-editor .title {
+    flex: 1;
+    text-align: center;
+    color: #dcdcdc;
+    padding-right: 3.5vw;
+}
+
+.main-editor .ri-clipboard-line {
+    color: #dcdcdc;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.main-editor .ri-clipboard-line.clicked {
+    display: none;
+    width: 100px;
+}
+
+.main-editor .ri-check-line {
+    color: #dcdcdc;
+    font-size: 18px;
+    display: none;
+}
+
+.main-editor .ri-check-line.clicked {
+    display: initial;
+}
+
+.main-editor .CodeMirror {
+    width: 100%;
+    background-color: transparent;
+    padding: 1vh 2vw;
+    font-size: 0.9vw;
+    font-family: "Monaco";
+}
+
+.main-editor .cm-s-dracula.CodeMirror {
+    background-color: transparent !important;
+}
+
+.main-content:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
+    transform-origin: top left;
+    transform: skewY(4deg);
+    z-index: -1;
+}
+
+
+ .second-content {
+    display: flex;
+    width: 100vw;
+    height: 110vh;
+    justify-content: center;
+    position: relative;
+    background-color: #18181e;
+    transform-origin: bottom left;
+    transform: skewY(4deg);
+}
+
+.second-content:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 15vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
+    transform-origin: bottom left;
+    transform: skewY(-4deg);
+    z-index: -1;
+}
+
+
+.second-content .second-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10vh 8vw;
+    gap: 2vh;
+    transform: skewY(-4deg);
+}
+
+.second-content .second-cards .card-1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 0vw;
+}
+
+.second-content .second-cards .card-1 .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.8vw;
+    font-weight: 300;
+    width: 100%;
+    height: 50%;
+}
+
+.second-content .second-cards .card-2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 3vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-content .second-cards .card-2 .multi-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.second-cards .card-2 .multi-card-1 .terminal {
+    height: 80%;
+    margin-bottom: 10%;
+}
+
+
+.second-cards .card-2 .multi-card-2 .terminal {
+    height: 80%;
+    margin-top: 40%;
+}
+
+
+.second-cards .card-2 .multi-card-3 .terminal {
+    height: 80%;
+    margin-bottom: 10%;
+}
+
+.third-content {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+    padding: 2vh 8vw;
+}
+
+.third-content .te-inner-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.0vw;
+    font-weight: 300;
+    height: 40%;
+}
+
+.third-content .te-inner-2 {
+    display: flex;
+    width: 100%;
+    height: 40%;
+}
+
+.third-content .te-inner-2-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3vw;
+    padding: 0vh ;
+}
+
+.third-content .te-inner-2-1 .names {
+    height: 80%;
+    border-radius: 15px;
+    border: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.third-content .te-inner-2-1 .eth img {
+    width: 100%;
+    height: 100%;
+}
+
+.third-content .te-inner-2-1 .ctf {
+    /* width: ; */
+    height: 85%;
+}
+
+.third-content .te-inner-2-1 .ctf img  {
+    width: 100%;
+    height: 110%;
+}
+
+.third-content .te-inner-2-1 .red {
+    height: 80%;
+}
+
+.third-content .te-inner-2-1 .red img  {
+    width: 150%;
+    height: 100%;
+}
+
+.third-content .te-inner-2-1 .bug img  {
+    width: 100%;
+    height: 100%;
+}
+
+.third-content .te-inner-2-1 .names:hover {
+    transform: translateY(-10px);
+}
+
+.ending-container {
+    height: 30vh;
+    width: 100%;
+    background-color: #18181e;
+    padding: 0vh 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.ending-container .info-1 {
+    display: flex;
+    align-items: center;
+    gap: 0.3vw;
+}
+
+.ending-container .info-1 .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.ending-container .info-1 .material-symbols-outlined {
+    color: rgb(255, 54, 88);
+    font-size: 1.4vw;
+}
+
+
+.ending-container .info-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.ending-container .info-2 span {
+    color: #9a9a9d;
+}
+
+
+.social-wrapper {
+    display: inline-flex;
+}
+
+.social-wrapper .icon {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+}
+
+.social-wrapper .icon span {
+    position: relative;
+    height: 34px;
+    width: 33px;
+    display: block;
+    background: #292932;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 1 10px 10px rgba(0,0,0,0.1);
+}
+
+
+.social-wrapper .icon span i{
+    font-size: 25px;
+    line-height: 34px;
+    color: white;
+}
+
+.social-wrapper .icon:hover span i {
+    color: #fff;
+}
+
+.social-wrapper .icon .tooltip {
+    position: absolute;
+    top: 0px;
+    background: #a4b1cd;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 25px;
+    box-shadow: 1 10px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+}
+
+.social-wrapper .icon:hover .tooltip {
+    top: -50px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.social-wrapper .icon .tooltip:before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    background: #a4b1cd;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+}
+
+.social-wrapper .icon:hover span,
+.social-wrapper .icon:hover .tooltip  {
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+
+}
+
+.social-wrapper .linkedin:hover span,
+.social-wrapper .linkedin:hover .tooltip,
+.social-wrapper .linkedin:hover .tooltip:before {
+    background: #0a66c2;
+}
+.social-wrapper .github:hover span,
+.social-wrapper .github:hover .tooltip,
+.social-wrapper .github:hover .tooltip:before {
+    background: #333;
+}
+.social-wrapper .instagram:hover span,
+.social-wrapper .instagram:hover .tooltip,
+.social-wrapper .instagram:hover .tooltip:before {
+    background: #e1306c;
+}
+.social-wrapper .twitter:hover span,
+.social-wrapper .twitter:hover .tooltip,
+.social-wrapper .twitter:hover .tooltip:before {
+    background: #46C1F6;
+}
+
